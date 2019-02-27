@@ -1,0 +1,53 @@
+.contentDiv
+{
+    float: left;
+    width:100%;
+}
+
+#divNav
+{
+    height: 150px;
+}
+
+#divMain
+{
+    height: 500px;
+}
+#divBottom
+{
+    height: 200px;
+}
+
+.subDiv
+{
+    float: left;
+    width: 25%;
+    text-align: center;
+    margin-top:40px;
+}
+
+.divSub
+{
+    float: left;
+    width: 33%;
+    text-align: center;
+    margin-top: 20px;
+    height: 100%;
+}
+
+fieldset
+{
+  height: 80%;
+  text-align: left;
+}
+
+#divBottom
+{
+    float: left;
+    text-align: center;
+}
+
+.atag
+{
+    padding: 10px;
+}
