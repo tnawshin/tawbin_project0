@@ -1,7 +1,8 @@
-.contentDiv
+.collapse navbar-collapse
 {
     float: left;
     width:100%;
+    background-color: azure;
 }
 
 #divNav
@@ -11,29 +12,43 @@
 
 #divMain
 {
-    height: 500px;
+    height: 1000px;
 }
 #divBottom
 {
-    height: 200px;
+    height: 500px;
+}
+h1, h4{
+text-align: center;
+color: orangered;
 }
 
 .subDiv
 {
     float: left;
-    width: 25%;
+    width: 10%;
     text-align: center;
     margin-top:40px;
+    /* background-color: lightseagreen; */
 }
+
 
 .divSub
 {
-    float: left;
+    /* float: left; */
     width: 33%;
     text-align: center;
     margin-top: 20px;
     height: 100%;
+    /* background-color:lightgreen; */
 }
+#divsub1{
+    
+    text-align: center ;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
 
 fieldset
 {
@@ -45,6 +60,7 @@ fieldset
 {
     float: left;
     text-align: center;
+    /* background-color:lightgoldenrodyellow; */
 }
 
 .atag
