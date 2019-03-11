@@ -1,0 +1,213 @@
+<!Doctype html>
+<html lang="en_US">
+
+<head>
+    <script src="project0.js" type="text/javascript"></script>
+    <link href="project0.css" rel="stylesheet" type="text/css" />
+    <title>Revature Gaming Contest</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <img src="revature.png" alt="Image not found!" height="150px" width="150px">
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="project0.html">Home </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Contact_Project0.html">Contact Us<span class="sr-only">(current)</span></a></li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="SignIn_Project0.html">Sign In</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="SignUp_Project0.html">Sign Up</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="game_Project0.html">Game Page</a></li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </div>
+            </nav>
+        </header>
+    </div>
+    <br>
+    <div class="container">
+        <main>
+            <form id="formSignup" name="frmSignup" action="url" method="get" onsubmit="return Validate();">
+                <fieldset>
+                    <div class="jumbotron">
+                        <legend class="text-secondary">Join Us</legend>
+                    </div>
+                    <div class="form-group">
+                        <label for="first name">Enter First Name :</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="First Name(Required)" name="first name"
+                            id="txtfirstName" onchange="StoreValues(this);" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="middle name">Enter Middle Name :</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Middle Name(Optional)" name="middle name"
+                            id="txtmiddleName" onchange="StoreValues(this);" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="last name">Enter Last Name :</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Last Name(Required)" name="last name"
+                            id="txtlastName" onchange="StoreValues(this);" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Enter your address :</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Address Line1" name="address"
+                            id="txtaddress" onchange="StoreValues(this);" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="apt">Apartment :</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Apartment number" name="apt"
+                            id="txtapartment" onchange="StoreValues(this);" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="zipcode">ZipCode :</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" placeholder="12345-6789" name="zipcode"
+                            id="txtzipcode" onchange="StoreValues(this);"
+                            onkeypress="return (event.charCode>=48 && event.charCode<=57) || event.charCode==45"
+                            required />
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State :</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="state" id="txtstate" onchange="StoreValues(this);"
+                            required />
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City :</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="city" id="txtcity" onchange="StoreValues(this);"
+                            required />
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country :</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="country" id="txtcountry"
+                            onchange="StoreValues(this);" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Enter your Phone Number :</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-control" placeholder="xxx-xxx-xxxx" id="txtphone"
+                            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" onchange="StoreValues(this);"
+                            onkeypress="return (event.charCode>=48 && event.charCode<=57) || event.charCode==45"
+                            required />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Enter your Email :</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="name@example.com" name="email"
+                            id="txtemail" onchange="StoreValues(this);" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Enter your Password :</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password" id="email" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Enter your age :</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" name="age" onchange="StoreValues(this);" id="txtage"
+                            min=16 max=100 required />
+                    </div>
+                    <div id="radios">
+                        <input type="radio" name="gender" id="male" value="M" onchange="storeGender(this);"
+                            required />Male &nbsp;
+                        <input type="radio" name="gender" id="female" value="F" onchange="storeGender(this);"
+                            required />Female &nbsp;
+                        <input type="radio" name="gender" id="others" value="O" onchange="storeGender(this);"
+                            required />Others &nbsp;
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="comment">Enter Comment :</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="comment" rows="4"></textarea>
+                    </div>
+                </fieldset>
+                <br>
+                <div>
+                    <input type="checkbox" id="checkAgree" value="check" required />
+                    <label>Agree to Join</label>
+                </div>
+                <br>
+                <div>
+                    <input type="submit" value="Sign Up">
+                </div>
+            </form>
+            <br>
+        </main>
+    </div>
+    <footer class="container" style="background-color: #e9ecef;border-radius: .3rem;">
+            <div class="row">
+                <div class="col-sm-7" style="background-color:none;">
+                    @copy Revature LLC. All rights reserved.
+                </div>
+                <div class="col-sm-5" style="background-color:none;">
+                    <a href="https://www.linkedin.com/company/revature/" target="_blank"
+                        class="atag font-weight-bolder">Linkedin</a> &nbsp;&nbsp;
+                    <a href="https://www.facebook.com/revature/" target="_blank"
+                        class="atag font-weight-bolder">Facebook</a>
+                    &nbsp;&nbsp;
+                    <a href="https://twitter.com/WeAreRevature" target="_blank"
+                        class="atag font-weight-bolder">Twitter</a>
+                    &nbsp;&nbsp;
+                    <a href="https://revature.com/" target="_blank" class="atag font-weight-bolder">Revature</a>
+                </div>
+        </footer>
+
+
+    <!--External JS and other external references keep at the bottom so that page loading is not delayed!!!-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="phoneno-all-numeric-validation.js"></script>
+</body>
+
+</html>
