@@ -83,7 +83,6 @@ function startGame() {
   timeoutId = setInterval(makeEnemy, timeBetweenEnemies);
   // Make the first enemy
   setTimeout(makeEnemy, 1000);
-  // Kick off the draw loop
   // An array for enemies (in case there are more than one)
   enemies = [];
 
@@ -149,7 +148,7 @@ canvas.addEventListener('keyup', function (event) {
 // Clear the canvas
 function reset() {
   context.fillStyle = 'black';
-  context.fillRect(0, 0, 1000, 600);
+  context.fillRect(0, 0, 700, 600);
 }
 
 // The main draw loop
@@ -161,6 +160,7 @@ function draw()
   // Move and draw the enemies
   enemies.forEach(function (enemy) {
     enemy.x = enemy.x-enemy.s; 
+    //If it goes out of bounds then game is over
     if (enemy.x < 0) 
     {
       gameOver = true;

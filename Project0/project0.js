@@ -12,19 +12,11 @@ function Validate() {
     var country = document.getElementById("txtcountry").value;
 
 //validate the properties
-    if (firstName == middleName) {
-        alert("firstname and middlename cannot be the same");
-        return false;
-    }
-    else if (middleName == lastName) {
-        alert("middlename and lastname cannot be the same");
-        return false;
-    }
-
-    else if (firstName == lastName) {
+    if (firstName == lastName) {
         alert("firstname and lastname cannot be the same");
         return false;
-    }else if (!(country == 'USA' || country == 'US' || country == 'United States' || country == 'United States Of America') ){
+    }
+    else if (!(country == 'USA' || country == 'US' || country == 'United States' || country == 'United States Of America') ){
         alert("User has to reside in the United States to Sign Up");
         return false;
     }
@@ -33,7 +25,6 @@ function Validate() {
         alert("Thank you for signing up with Revature!");
         return true;
     }
-
 }
 
 function StoreValues(e) {
