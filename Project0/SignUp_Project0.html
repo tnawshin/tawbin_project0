@@ -3,7 +3,6 @@
 
 <head>
     <script src="project0.js" type="text/javascript"></script>
-    <link href="project0.css" rel="stylesheet" type="text/css" />
     <title>Revature Gaming Contest</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,179 +22,185 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item">
-                                <img src="revature.png" alt="Image not found!" height="150px" width="150px">
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="project0.html">Home </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="Contact_Project0.html">Contact Us<span class="sr-only">(current)</span></a></li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="SignIn_Project0.html">Sign In</a></li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="SignUp_Project0.html">Sign Up</a></li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="game_Project0.html">Game Page</a></li>
-                        </ul>
-                        <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                        </form>
-                    </div>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <img src="revature.png" alt="Image not found!" height="150px" width="150px">
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="project0.html">Home </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Contact_Project0.html">Contact Us<span
+                                    class="sr-only">(current)</span></a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="SignIn_Project0.html">Sign In</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="SignUp_Project0.html">Sign Up</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="game_Project0.html" hidden>Game Page</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="afterSignUp.html" hidden>Game Page</a></li>
+
+                    </ul>
+                </div>
             </nav>
         </header>
     </div>
     <br>
     <div class="container">
         <main>
-            <form id="formSignup" name="frmSignup" action="url" method="get" onsubmit="return Validate();">
-                <fieldset>
-                    <div class="jumbotron">
-                        <legend class="text-secondary">Join Us</legend>
+            <!--action attribute of form is set to the page we want to redirect after form submits successfully -->
+            <form id="formSignup" name="frmSignup" action="project0.html" method="POST" onsubmit="javascript:return Validate();">
+                <div class="jumbotron">
+                    <legend class="text-secondary">
+                        <center>Join Us</center>
+                    </legend>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="first name">Enter First Name :</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="First Name(Required)"
+                                    name="first name" id="txtfirstName" onchange="StoreValues(this);" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="middle name">Enter Middle Name :</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Middle Name(Optional)"
+                                    name="middle name" id="txtmiddleName" onchange="StoreValues(this);" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="last name">Enter Last Name :</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Last Name(Required)"
+                                    name="last name" id="txtlastName" onchange="StoreValues(this);" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Enter your Email :</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="name@example.com" name="email"
+                                    id="txtemail" onchange="StoreValues(this);" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Enter your Password :</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" name="password" id="txtpassword" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="age">Enter your age :</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="number" class="form-control" name="age" onchange="StoreValues(this);"
+                                    id="txtage" min=16 max=100 required />
+                            </div>
+                            <div id="radios">
+                                <input type="radio" name="gender" id="male" value="M" onchange="storeGender(this);"
+                                    required />Male &nbsp;
+                                <input type="radio" name="gender" id="female" value="F" onchange="storeGender(this);"
+                                    required />Female &nbsp;
+                                <input type="radio" name="gender" id="others" value="O" onchange="storeGender(this);"
+                                    required />Others &nbsp;
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="comment">Enter Comment :</label>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" id="comment" rows="4"></textarea>
+                            </div>
+                        </fieldset>
+                        <div>
+                            <input type="checkbox" id="checkAgree" value="check" required />
+                            <label>Agree to Join</label>
+                        </div>
+                        <br>
+                        <div>
+                            <input type="submit" id="signUp" value="Submit">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="first name">Enter First Name :</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="First Name(Required)" name="first name"
-                            id="txtfirstName" onchange="StoreValues(this);" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="middle name">Enter Middle Name :</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Middle Name(Optional)" name="middle name"
-                            id="txtmiddleName" onchange="StoreValues(this);" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="last name">Enter Last Name :</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Last Name(Required)" name="last name"
-                            id="txtlastName" onchange="StoreValues(this);" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="address">Enter your address :</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Address Line1" name="address"
-                            id="txtaddress" onchange="StoreValues(this);" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="apt">Apartment :</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Apartment number" name="apt"
-                            id="txtapartment" onchange="StoreValues(this);" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="zipcode">ZipCode :</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="number" class="form-control" placeholder="12345-6789" name="zipcode"
-                            id="txtzipcode" onchange="StoreValues(this);"
-                            onkeypress="return (event.charCode>=48 && event.charCode<=57) || event.charCode==45"
-                            required />
-                    </div>
-                    <div class="form-group">
-                        <label for="state">State :</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="state" id="txtstate" onchange="StoreValues(this);"
-                            required />
-                    </div>
-                    <div class="form-group">
-                        <label for="city">City :</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="city" id="txtcity" onchange="StoreValues(this);"
-                            required />
-                    </div>
-                    <div class="form-group">
-                        <label for="country">Country :</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="country" id="txtcountry"
-                            onchange="StoreValues(this);" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Enter your Phone Number :</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" class="form-control" placeholder="xxx-xxx-xxxx" id="txtphone"
-                            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" onchange="StoreValues(this);"
-                            onkeypress="return (event.charCode>=48 && event.charCode<=57) || event.charCode==45"
-                            required />
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Enter your Email :</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="name@example.com" name="email"
-                            id="txtemail" onchange="StoreValues(this);" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Enter your Password :</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" name="password" id="email" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="age">Enter your age :</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="number" class="form-control" name="age" onchange="StoreValues(this);" id="txtage"
-                            min=16 max=100 required />
-                    </div>
-                    <div id="radios">
-                        <input type="radio" name="gender" id="male" value="M" onchange="storeGender(this);"
-                            required />Male &nbsp;
-                        <input type="radio" name="gender" id="female" value="F" onchange="storeGender(this);"
-                            required />Female &nbsp;
-                        <input type="radio" name="gender" id="others" value="O" onchange="storeGender(this);"
-                            required />Others &nbsp;
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-5">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="address">Enter your address :</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Address Line1" name="address"
+                                    id="txtaddress" onchange="StoreValues(this);" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="zipcode">ZipCode :</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="number" class="form-control" placeholder="12345-6789" name="zipcode"
+                                    id="txtzipcode" onchange="StoreValues(this);"
+                                    onkeypress="return (event.charCode>=48 && event.charCode<=57) || event.charCode==45"
+                                    required />
+                            </div>
+                            <div class="form-group">
+                                <label for="state">State :</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="state" id="txtstate"
+                                    onchange="StoreValues(this);" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="city">City :</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="city" id="txtcity"
+                                    onchange="StoreValues(this);" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Country :</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="country" id="txtcountry"
+                                    onchange="StoreValues(this);" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Enter your Phone Number :</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" class="form-control" placeholder="xxx-xxx-xxxx" id="txtphone"
+                                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" onchange="StoreValues(this);"
+                                    onkeypress="return (event.charCode>=48 && event.charCode<=57) || event.charCode==45"
+                                    required />
+                            </div>
+
+                        </fieldset>
                     </div>
                     <br>
-                    <div class="form-group">
-                        <label for="comment">Enter Comment :</label>
-                    </div>
-                    <div class="form-group">
-                        <textarea class="form-control" id="comment" rows="4"></textarea>
-                    </div>
-                </fieldset>
-                <br>
-                <div>
-                    <input type="checkbox" id="checkAgree" value="check" required />
-                    <label>Agree to Join</label>
-                </div>
-                <br>
-                <div>
-                    <input type="submit" value="Sign Up">
-                </div>
             </form>
             <br>
         </main>
     </div>
+    <br><br>
     <footer class="container" style="background-color: #e9ecef;border-radius: .3rem;">
-            <div class="row">
-                <div class="col-sm-7" style="background-color:none;">
-                    @copy Revature LLC. All rights reserved.
-                </div>
-                <div class="col-sm-5" style="background-color:none;">
-                    <a href="https://www.linkedin.com/company/revature/" target="_blank"
-                        class="atag font-weight-bolder">Linkedin</a> &nbsp;&nbsp;
-                    <a href="https://www.facebook.com/revature/" target="_blank"
-                        class="atag font-weight-bolder">Facebook</a>
-                    &nbsp;&nbsp;
-                    <a href="https://twitter.com/WeAreRevature" target="_blank"
-                        class="atag font-weight-bolder">Twitter</a>
-                    &nbsp;&nbsp;
-                    <a href="https://revature.com/" target="_blank" class="atag font-weight-bolder">Revature</a>
-                </div>
-        </footer>
-
+        <div class="row">
+            <div class="col-sm-8" style="background-color:none;">
+                @copy Revature LLC. All rights reserved.
+            </div>
+            <div class="col-sm-4" style="background-color:none;">
+                <a href="https://www.linkedin.com/company/revature/" target="_blank" class="atag font-weight-bolder">
+                    <img src="linkedinimg.png" alt="Image not found!" height="50px" width="50px"></a> &nbsp;&nbsp;
+                <a href="https://www.facebook.com/revature/" target="_blank" class="atag font-weight-bolder">
+                    <img src="facebook.png" alt="Image not found!" height="50px" width="50px"></a>
+                &nbsp;&nbsp;
+                <a href="https://twitter.com/WeAreRevature" target="_blank" class="atag font-weight-bolder">
+                    <img src="twitter.png" alt="Image not found!" height="50px" width="50px"></a>
+                &nbsp;&nbsp;
+                <a href="https://www.instagram.com/teamrevature/" target="_blank" class="atag font-weight-bolder">
+                    <img src="instagram.png" alt="Image not found!" height="50px" width="50px"></a>
+            </div>
+    </footer>
 
     <!--External JS and other external references keep at the bottom so that page loading is not delayed!!!-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
