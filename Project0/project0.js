@@ -72,9 +72,9 @@ function validateContact()
         alert("firstname and lastname cannot be the same");
         return false;
     }
-    else if(txtemail.value == "" || txtquery.value=="")
+    else if(txtemail.value == "" || txtquery.value=="" || txtfName.value == "" || txtlName.value == "")
     {
-        alert("Email and Query cannot be empty");
+        alert("Please fill out all the required fields");
         return false;
     }
     else 
